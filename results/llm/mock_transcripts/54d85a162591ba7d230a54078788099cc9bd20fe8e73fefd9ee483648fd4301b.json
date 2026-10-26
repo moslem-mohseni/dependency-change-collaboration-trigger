@@ -1,0 +1,23 @@
+{
+  "backend": "mock",
+  "model": "mock",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Audit and repair the candidate schedule under all constraints. Return only JSON with start, one nonnegative integer for each task. {\"candidate\": null, \"task\": {\"capacities\": [3, 3], \"durations\": [1, 2, 5, 3, 3, 4, 4, 3, 5, 2, 1, 7], \"exclusions\": [], \"old_schedule\": [0, 0, 0, 15, 5, 5, 9, 9, 8, 13, 17, 13], \"predecessors\": [[], [], [], [2], [2], [0, 2], [4, 5], [4, 5], [4], [6], [8], [6]], \"resource_demands\": [[2, 0], [1, 0], [0, 2], [2, 2], [0, 1], [1, 1], [0, 1], [2, 1], [0, 1], [1, 2], [0, 0], [0, 0]]}}"
+    }
+  ],
+  "seed": 30009,
+  "temperature": 0,
+  "max_tokens": 256,
+  "response": "{\"steps\": []}",
+  "raw": {
+    "mock": true
+  },
+  "elapsed_seconds": 0.0,
+  "reserved_usd": 0.0,
+  "prompt_sha256": "54d85a162591ba7d230a54078788099cc9bd20fe8e73fefd9ee483648fd4301b",
+  "cached": false,
+  "seed_supported": true,
+  "mock": true
+}

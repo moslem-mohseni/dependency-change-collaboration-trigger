@@ -1,0 +1,82 @@
+{
+  "paper": "P2",
+  "normalization": "Text line endings normalized to LF; binary files exact",
+  "files": {
+    "src/agents.py": {
+      "mode": "lf",
+      "sha256": "61c3a79d07373d85e26c6b7bea4bdeeac35d273f3747fe0974fcaa16a5edb990"
+    },
+    "src/analyze.py": {
+      "mode": "lf",
+      "sha256": "30fc355e0801a06d5f5ae4efc31ea0b57753d76c643a95c56a82ea4b18f0af03"
+    },
+    "src/jobs.py": {
+      "mode": "lf",
+      "sha256": "04d11d578fb34a5cbdede0e0640a5853b9a633cb94c8f4d29f5b3c512da6a584"
+    },
+    "src/llm_study/availability_attempt.json": {
+      "mode": "lf",
+      "sha256": "f51717d9cfb7778ff9424738a12601271701380c2437ae9f3f1ce303fb75cebe"
+    },
+    "src/llm_study/client.py": {
+      "mode": "lf",
+      "sha256": "a0e84054ab5d9d13b3ed4d572ce22ee92ed73a8dd0c0e4084242fa8977002a73"
+    },
+    "src/llm_study/run.py": {
+      "mode": "lf",
+      "sha256": "99941fc654651b553f74cca88b6a85d28cc74fa1e8f2110c9c4bd5d5af95bfea"
+    },
+    "src/primary_statistics.py": {
+      "mode": "lf",
+      "sha256": "e0df1f3dd3f895c4a0da5f96955bd82aa7d5895cfe2e13d401b671192a4d90ac"
+    },
+    "src/run_experiments.py": {
+      "mode": "lf",
+      "sha256": "19e16c36c27c123f22f04b62bfaf8def19551906e42683006da40cace89bfc2c"
+    },
+    "src/stats_utils.py": {
+      "mode": "lf",
+      "sha256": "bd528dc747ab9cc8adfeb85e6780d0b8119dfcb69587ab7faf4dc60f37dded1a"
+    },
+    "tests/test_llm_client.py": {
+      "mode": "lf",
+      "sha256": "f50668006bb950ee5caeeb71cfc34afdb2e54e0b497f7f35b23dde64d3e43a49"
+    },
+    "tests/test_llm_study.py": {
+      "mode": "lf",
+      "sha256": "faded7a47e310c098620c3a800d8ef0b777ef4d2e2ded7e6f8d86ac3b26d75dc"
+    },
+    "tests/test_primary_statistics.py": {
+      "mode": "lf",
+      "sha256": "4f10a72cc16a48901976970642589214425d7ace1fec0a1a5230f1034ce8227d"
+    },
+    "tests/test_sched.py": {
+      "mode": "lf",
+      "sha256": "35ddf8b5c886125df9effef27ee5d76f2b3bf0cf341b5a09f24589ac82debbf6"
+    },
+    "tests/test_validity.py": {
+      "mode": "lf",
+      "sha256": "a4d498ff2ddee490dadc207be8a7db191edc9807688a420a75c3354d5359b700"
+    },
+    "requirements.txt": {
+      "mode": "lf",
+      "sha256": "c3c139a03954a419d7db471c5711a36007f1afc66c1521c7709cb2d3d166c2a6"
+    },
+    "Dockerfile": {
+      "mode": "lf",
+      "sha256": "a4e664731f33b8ac32ca6c4ca657045449f2107c5ad0778be6b8bf55498a60fb"
+    },
+    "run_all.sh": {
+      "mode": "lf",
+      "sha256": "7fca1e8501699e0c0dda9233d235bafbe364075cb18eb0f519ac1dbcf6a784a4"
+    },
+    "run_all.ps1": {
+      "mode": "lf",
+      "sha256": "2b91e63f8eb53f47038b8841121be80ce0db0a6295c5a308a46236d73ecb56cd"
+    },
+    "paper/DarnerView templete.docx": {
+      "mode": "bytes",
+      "sha256": "8347415f10dcbb583f9a183499294562c38ddfd38e1060857e5a40a13f5be069"
+    }
+  }
+}

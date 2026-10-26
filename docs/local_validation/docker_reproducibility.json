@@ -1,0 +1,53 @@
+{
+  "comparison": "exact parsed content",
+  "files": [
+    {
+      "file": "auc_cluster_intervals.csv",
+      "rows": 30,
+      "columns": 6,
+      "equal": true
+    },
+    {
+      "file": "by_kind.csv",
+      "rows": 3,
+      "columns": 8,
+      "equal": true
+    },
+    {
+      "file": "feature_auc.csv",
+      "rows": 30,
+      "columns": 5,
+      "equal": true
+    },
+    {
+      "file": "lambda_sweep.csv",
+      "rows": 160,
+      "columns": 13,
+      "equal": true
+    },
+    {
+      "file": "policy_summary.csv",
+      "rows": 456,
+      "columns": 10,
+      "equal": true
+    },
+    {
+      "file": "primary_paired.csv",
+      "rows": 7,
+      "columns": 10,
+      "equal": true
+    },
+    {
+      "file": "raw_episodes.csv",
+      "rows": 54000,
+      "columns": 26,
+      "equal": true
+    },
+    {
+      "file": "validator_breakeven.csv",
+      "rows": 7,
+      "columns": 4,
+      "equal": true
+    }
+  ]
+}

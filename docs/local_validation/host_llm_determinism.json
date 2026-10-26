@@ -1,0 +1,11 @@
+{
+  "comparison": "exact parsed content",
+  "files": [
+    {
+      "file": "dry_run.csv",
+      "rows": 204,
+      "columns": 17,
+      "equal": true
+    }
+  ]
+}

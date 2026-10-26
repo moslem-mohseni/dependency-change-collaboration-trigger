@@ -1,0 +1,11 @@
+.git
+**/__pycache__
+**/qa
+**/.pytest_cache
+literature/source_cache
+results/llm/cache
+artifacts
+*.pdf
+paper/*.zip
+results/*log.txt
+results/*.log

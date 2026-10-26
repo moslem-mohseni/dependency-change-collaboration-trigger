@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-26",
+  "api_key_variables_present": [],
+  "ollama_service_available": false,
+  "local_cli_or_ready_model_found": false,
+  "official_source": "https://ollama.com/download/OllamaSetup.exe",
+  "runtime_acquisition_outcome": "download_timeout",
+  "resume_timeout_seconds": 900,
+  "bytes_received_during_resume": 470673280,
+  "expected_remaining_bytes": 1356582896,
+  "installer_executed": false,
+  "real_model_calls": 0,
+  "reason": "No API credentials or ready local runtime; official runtime download did not complete within the acquisition attempt. The partial installer was not executed."
+}

@@ -1,0 +1,23 @@
+{
+  "backend": "mock",
+  "model": "mock",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Repair this synthetic schedule. Return only JSON {\"start\":[nonnegative integer start time for each task]}. {\"capacities\": [3, 2], \"durations\": [4, 5, 3, 4, 2, 3, 4, 4, 2, 1, 4, 5], \"exclusions\": [[0, 11], [4, 9]], \"old_schedule\": [0, 0, 12, 0, 10, 15, 4, 0, 8, 14, 10, 18], \"predecessors\": [[], [4], [], [], [3], [11], [3], [], [], [4], [7, 8], [0]], \"resource_demands\": [[1, 1], [1, 0], [1, 1], [0, 1], [1, 1], [1, 2], [2, 2], [1, 0], [2, 2], [1, 1], [0, 1], [0, 2]]}"
+    }
+  ],
+  "seed": 140003,
+  "temperature": 0,
+  "max_tokens": 256,
+  "response": "{\"steps\": []}",
+  "raw": {
+    "mock": true
+  },
+  "elapsed_seconds": 0.0,
+  "reserved_usd": 0.0,
+  "prompt_sha256": "45726f8bf4dc9008e6018d2a8873472914ffbcb14f71ff13cb787a7944db1ae7",
+  "cached": false,
+  "seed_supported": true,
+  "mock": true
+}
