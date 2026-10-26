@@ -1,7 +1,40 @@
 {
-  "name": "[AUTHOR NAME]",
-  "affiliation": "[AFFILIATION]",
-  "orcid": "[ORCID]",
-  "email": "moslem.mohsenikhah@iau.ir",
-  "short_author": "[AUTHOR]"
+  "schema_version": 2,
+  "authors": [
+    {
+      "id": "sepide",
+      "name": "Sepide Ebrahimian Maqsoud",
+      "given_name": "Sepide",
+      "family_name": "Ebrahimian Maqsoud",
+      "email": "S.ebrahimian1@gmail.com",
+      "affiliation": "Department of Electrical Engineering, Hamedan University of Technology, Hamedan, Iran",
+      "orcid": "",
+      "scholar": ""
+    },
+    {
+      "id": "moslem",
+      "name": "Moslem Mohseni Khah",
+      "given_name": "Moslem",
+      "family_name": "Mohseni Khah",
+      "email": "moslem.mohsenikhah@iau.ir",
+      "affiliation": "Department of Computer Engineering, Islamic Azad University, Hamedan Branch, Hamedan, Iran",
+      "orcid": "",
+      "scholar": ""
+    },
+    {
+      "id": "navid",
+      "name": "Navid Sadeghi",
+      "given_name": "Navid",
+      "family_name": "Sadeghi",
+      "email": "navidsadeghi0021@gmail.com",
+      "affiliation": "Department of Electrical Engineering – Control, Shahid Beheshti University, Tehran, Iran",
+      "orcid": "",
+      "degree": "M.Sc. Student in Electrical Engineering – Control",
+      "scholar": "https://scholar.google.com/citations?hl=en&user=i4Ni-ssAAAAJ"
+    }
+  ],
+  "corresponding_author": "moslem",
+  "repository": "https://github.com/moslem-mohseni/dependency-change-collaboration-trigger",
+  "contributions_statement": "The authors take collective responsibility for this manuscript.",
+  "metadata_source": "Author names, affiliations, emails and order supplied or approved by the corresponding author on 26 October 2026; ORCID identifiers were not supplied."
 }

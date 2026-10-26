@@ -22,10 +22,22 @@ def main():
         all_text="\n".join("".join(el.xpath('.//w:t/text()',namespaces=NS)) for name in archive.namelist()
             if re.match(r"word/(?:document|header\d+|footer\d+)\.xml$",name)
             for el in etree.fromstring(archive.read(name)).xpath(".//w:p",namespaces=NS))
-        banned=re.findall(r"\b(?:XX|DD\.MM|Lorem|placeholder|to be completed|TODO|Sample|imaginary|fictional|Claude|Anthropic)\b|AI system|Use of AI Tools",all_text,re.I)
+        banned=re.findall(r"\b(?:XX|DD\.MM|Lorem|placeholder|to be completed|TODO|Sample|imaginary|fictional)\b|AI system|Use of AI Tools",all_text,re.I)
         assert not banned,banned
         assert not re.search(r"\{[TFE]:",all_text),"Unresolved cross-reference"
-        allowed={value for value in author.values() if value.startswith('[')}
+        allowed=set()
+        people=author['authors']
+        assert len(people)==3 and people[2]['name']=='Navid Sadeghi'
+        for person in people:
+            assert person['name'] in all_text and person['affiliation'] in all_text
+        assert author['repository'] in all_text
+        relationships=etree.fromstring(archive.read('word/_rels/document.xml.rels'))
+        assert any(r.get('Target')==author['repository'] and r.get('TargetMode')=='External' for r in relationships)
+        core=etree.fromstring(archive.read('docProps/core.xml'))
+        assert core.find('{http://purl.org/dc/elements/1.1/}creator').text=='; '.join(p['name'] for p in people)
+        assert '[AUTHOR' not in all_text and '[ORCID' not in all_text
+        assert spec['meta']['corresponding']=='Moslem Mohseni Khah'
+        assert spec['meta']['email']=='moslem.mohsenikhah@iau.ir'
         leftovers=[x for x in re.findall(r"\[[A-Z][A-Z ]+\]",all_text) if x not in allowed]
         assert not leftovers,leftovers
         assert 150<=len(spec["abstract"].split())<=250,len(spec["abstract"].split())

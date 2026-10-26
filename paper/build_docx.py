@@ -467,12 +467,48 @@ def build(spec, out_path, template=TEMPLATE):
     h2 = h2.replace("e-ISSN: XXXX-XXXX", "e-ISSN: assigned by the journal")
     B.files["word/header2.xml"] = h2.encode("utf8")
 
+    # The code-availability URL is an active, external hyperlink in Word/PDF.
+    repository = next((text for label, text in spec["declarations"] if label == "Data and Code Availability"), "")
+    match = re.search(r"https://github\.com/[A-Za-z0-9_-]+/[A-Za-z0-9_-]+", repository)
+    if match:
+        url = match.group(0)
+        relationship_id = "rIdResearchRepository"
+        relationship = etree.SubElement(B.rels, "{http://schemas.openxmlformats.org/package/2006/relationships}Relationship")
+        relationship.set("Id", relationship_id)
+        relationship.set("Type", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink")
+        relationship.set("Target", url)
+        relationship.set("TargetMode", "External")
+        for paragraph in B.body.iter(q("p")):
+            for run in list(paragraph.findall(q("r"))):
+                text_node = run.find(q("t"))
+                if text_node is None or url not in (text_node.text or ""):
+                    continue
+                before, after = text_node.text.split(url, 1)
+                position = paragraph.index(run)
+                properties = run.find(q("rPr"))
+                paragraph.remove(run)
+                if before:
+                    paragraph.insert(position, make_run(before, (), properties)); position += 1
+                hyperlink = el("hyperlink")
+                hyperlink.set("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id", relationship_id)
+                hyperlink.append(make_run(url, (), properties))
+                paragraph.insert(position, hyperlink); position += 1
+                if after:
+                    paragraph.insert(position, make_run(after, (), properties))
+
     # ---- core properties
     core = B.files["docProps/core.xml"].decode("utf8")
     core = re.sub(r"<dc:title>.*?</dc:title>", f"<dc:title>{escape(meta['title'])}</dc:title>", core)
     if "<dc:title>" not in core:
         core = core.replace("</cp:coreProperties>", f"<dc:title>{escape(meta['title'])}</dc:title></cp:coreProperties>")
-    B.files["docProps/core.xml"] = core.encode("utf8")
+    core_root = etree.fromstring(core.encode("utf8"))
+    for tag, value in (("{http://purl.org/dc/elements/1.1/}creator", "; ".join(a["name"] for a in meta["authors"])),
+                       ("{http://schemas.openxmlformats.org/package/2006/metadata/core-properties}lastModifiedBy", meta["corresponding"])):
+        element = core_root.find(tag)
+        if element is None:
+            element = etree.SubElement(core_root, tag)
+        element.text = value
+    B.files["docProps/core.xml"] = etree.tostring(core_root, xml_declaration=True, encoding="UTF-8", standalone=True)
 
     # ---- write
     B.files["word/document.xml"] = etree.tostring(B.doc, xml_declaration=True, encoding="UTF-8", standalone=True)

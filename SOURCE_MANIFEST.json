@@ -77,6 +77,46 @@
     "paper/DarnerView templete.docx": {
       "mode": "bytes",
       "sha256": "8347415f10dcbb583f9a183499294562c38ddfd38e1060857e5a40a13f5be069"
+    },
+    "CITATION.cff": {
+      "mode": "lf",
+      "sha256": "e5b389156cbd7e1cb59d3cc661f23a40df973e1709c03a38330ce790021cdfdc"
+    },
+    "CITATION.md": {
+      "mode": "lf",
+      "sha256": "360bee9105124edb8bee76742ce135aa72ec79ab05c21b2216312f878454c21e"
+    },
+    "paper/audit_manuscript.py": {
+      "mode": "lf",
+      "sha256": "441843e9577cf45277657d643a3934359a5e39b4c5233f518734f22da9bf33f9"
+    },
+    "paper/audit_numbers.py": {
+      "mode": "lf",
+      "sha256": "c6d27d3f281c6b207ac941261bda290b117be335e2ba385dcbe79efc5df76f21"
+    },
+    "paper/author.json": {
+      "mode": "lf",
+      "sha256": "c1563fc96a8f604c8be9ab8125afd3630d057c9bcdb9078fd7e7f93ac62af046"
+    },
+    "paper/build_docx.py": {
+      "mode": "lf",
+      "sha256": "5ab9aacc11eaed300cb3e2333027dfba5f061b8ddbe6c391ede18c319dcf0bc8"
+    },
+    "paper/build_manuscript.py": {
+      "mode": "lf",
+      "sha256": "c46add08019b7cb6b77512b2e05e6f06c884303963baa18cb0a6430af577bb13"
+    },
+    "paper/manuscript_support.py": {
+      "mode": "lf",
+      "sha256": "e056d7471944a05d0a32fee7c95a16786812437d43b70fa011473cbbfe25dfeb"
+    },
+    "paper/package_supplement.py": {
+      "mode": "lf",
+      "sha256": "e75b8ea3d7a39dd1eb5ef128175a3bde448228fe8e3ea51ea9826b315b8c5d9c"
+    },
+    "paper/update_readme.py": {
+      "mode": "lf",
+      "sha256": "4ebd4b808ba2cad11e90570ed1f8197d50c686d58a71a360ae71d2e1135ae418"
     }
   }
 }

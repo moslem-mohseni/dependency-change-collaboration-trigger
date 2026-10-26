@@ -2,7 +2,7 @@
 
 [![Reproduce research artifact](https://github.com/moslem-mohseni/dependency-change-collaboration-trigger/actions/workflows/reproduce.yml/badge.svg)](https://github.com/moslem-mohseni/dependency-change-collaboration-trigger/actions/workflows/reproduce.yml)
 
-**Parametric simulation research artifact. No real-model Study 2 was run.** Mock results are labelled and excluded from scientific estimates. Author and formal citation metadata are awaiting final confirmation; generated Word/PDF manuscripts are not published here yet.
+**Parametric simulation research artifact. No real-model Study 2 was run.** Mock results are labelled and excluded from scientific estimates. The confirmed three-author metadata is in paper/author.json and CITATION.cff.
 
 ## Start here
 - [Findings, assumptions, seeds and detailed reproduction](docs/RESEARCH.md)
@@ -24,5 +24,14 @@ The local artifact passed 17 tests and exact repeated-host/Docker comparison of 
 
 The model protocol, cached provider interface and persistent USD 5 cap are included, but no model/provider performance is claimed. Only synthetic mock traces are under results/llm/mock_transcripts. New live response caches, secrets and local logs are ignored.
 
-## Pending metadata
-Final three-author metadata and formal citation/license choices will be completed after confirmation. The template author fixture is not a final author list. No DOI, accepted manuscript or journal publication is claimed. This repository can already be identified by its URL and exact commit.
+## Authors and manuscript
+
+Sepide Ebrahimian Maqsoud, Moslem Mohseni Khah, Navid Sadeghi. Corresponding author: Moslem Mohseni Khah (moslem.mohsenikhah@iau.ir). Affiliations and supplied contact details are centralized in [paper/author.json](paper/author.json). ORCID identifiers were not supplied and are omitted.
+
+The manuscript is prepared for editorial consideration; no journal acceptance or publication is claimed. The repository contains its source and reproducible results. Formal reuse licensing remains as documented in docs/LICENSE_STATUS.md.
+
+## Submission manuscript files
+
+[Word manuscript](manuscript/P2_Dependency_Change_Trigger_for_Second_Agent.docx) · [PDF manuscript](manuscript/P2_Dependency_Change_Trigger_for_Second_Agent.pdf) · [Reproducible supplement](manuscript/supplementary_p2.zip)
+
+These are author-prepared submission files, subject to editorial review. No acceptance or publication status is implied.

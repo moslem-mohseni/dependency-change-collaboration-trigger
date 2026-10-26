@@ -49,17 +49,28 @@ class Evidence:
 
 def author_meta(paper_dir, title):
     author = json.loads((Path(paper_dir) / "author.json").read_text(encoding="utf-8-sig"))
-    return dict(title=title, authors=[dict(name=author["name"], sup="1*")],
-                affiliations=[author["affiliation"] + "  •  ORCID: " + author["orcid"]],
-                corresponding=author["name"], email=author["email"], short_author=author["short_author"])
+    people = author["authors"]
+    corresponding = next(person for person in people if person["id"] == author["corresponding_author"])
+    affiliations, byline = [], []
+    for person in people:
+        affiliation = person["affiliation"]
+        if affiliation not in affiliations:
+            affiliations.append(affiliation)
+        marker = str(affiliations.index(affiliation) + 1)
+        if person["id"] == author["corresponding_author"]:
+            marker += "*"
+        byline.append(dict(name=person["name"], sup=marker))
+    return dict(title=title, authors=byline, affiliations=affiliations,
+                corresponding=corresponding["name"], email=corresponding["email"],
+                short_author=people[0]["family_name"] + " et al.")
 
 
 def declarations(paper_dir, paper_id):
     author = json.loads((Path(paper_dir) / "author.json").read_text(encoding="utf-8-sig"))
     return [
-        ("Ethics Committee Approval", "Not applicable. Only synthetic tasks and simulated service data were used; no human participants or personal data were involved."),
-        ("Author Contributions", "Conceptualization, methodology, software, formal analysis, writing – original draft, writing – review and editing: " + author["name"] + "."),
-        ("Conflict of Interest", "The author declares no conflict of interest."),
+        ("Ethics Committee Approval", "Not applicable: synthetic tasks and simulated data; no human participants or personal data were involved."),
+        ("Author Contributions", author["contributions_statement"]),
+        ("Conflict of Interest", "The authors declare no conflict of interest."),
         ("Funding", "This research received no external funding."),
-        ("Data and Code Availability", "Code, data and generated results are provided as supplementary material and are available from the corresponding author. Supplementary file: supplementary_" + paper_id.lower() + ".zip."),
+        ("Data and Code Availability", "Code, data and generated results: " + author["repository"] + ". Supplementary material: supplementary_" + paper_id.lower() + ".zip; also available from the corresponding author."),
     ]
